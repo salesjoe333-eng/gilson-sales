@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gilson Sales — Engenharia em construção. Música em movimento.</title>
+<meta name="description" content="Site oficial de Gilson Sales, estudante angolano de engenharia e artista musical independente sob o nome Joe. Percurso académico, projetos de engenharia e carreira musical.">
+<link rel="canonical" href="https://gilsonsales.example/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gilson Sales — Engenharia em construção. Música em movimento.">
+<meta property="og:description" content="Site oficial de Gilson Sales (Joe): engenharia, física e música, construídos em simultâneo, a partir de Angola.">
+<meta property="og:url" content="https://gilsonsales.example/">
+<meta property="og:site_name" content="Gilson Sales">
+<meta property="og:image" content="https://gilsonsales.example/og-image.jpg">
+<meta property="og:locale" content="pt_PT">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gilson Sales — Engenharia em construção. Música em movimento.">
+<meta name="twitter:description" content="Estudante de engenharia · Artista musical independente · Angola">
+<meta name="twitter:image" content="https://gilsonsales.example/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json" id="ld-person">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Gilson Sales",
+  "alternateName": "Joe",
+  "description": "Gilson Sales é um jovem angolano interessado em engenharia, física, tecnologia e música. É conhecido artisticamente como Joe, artista musical independente.",
+  "url": "https://gilsonsales.example/",
+  "image": "https://gilsonsales.example/gilson-sales.jpg",
+  "nationality": "Angolana",
+  "jobTitle": "Estudante de Engenharia / Artista musical independente",
+  "sameAs": [
+    "https://instagram.com/Gilson3X"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "Joe",
+  "description": "Joe é o nome artístico de Gilson Sales, artista musical independente a partir de Angola.",
+  "genre": "Em atualização",
+  "member": { "@type": "Person", "name": "Gilson Sales" }
+}
+</script>
+
+<style>
+  :root{
+    --bg:#0a0b0d;
+    --surface:#111318;
+    --surface-2:#161922;
+    --line:#22262f;
+    --text:#eeece6;
+    --muted:#8b909c;
+    --muted-2:#5b606b;
+    --eng:#6e8cff;
+    --eng-dim:#3c4a86;
+    --music:#e8a33d;
+    --music-dim:#7a5a26;
+    --ok:#5fc98d;
+    --ok-dim:#2c5a41;
+    --radius:2px;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth; scroll-padding-top: calc(72px + env(safe-area-inset-top, 0px));}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',-apple-system,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Space Grotesk',sans-serif;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+  section{padding:96px 0;border-bottom:1px solid var(--line);}
+  @media(max-width:640px){section{padding:64px 0;}}
+
+  /* nav */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    padding-top: env(safe-area-inset-top, 0px);
+    background:rgba(10,11,13,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .navrow{
+    max-width:1080px;margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;}
+  .brand span{color:var(--music);}
+  nav.links{display:flex;gap:22px;font-size:13.5px;color:var(--muted);flex-wrap:wrap;}
+  nav.links a:hover{color:var(--text);}
+  .navtoggle{display:none;background:none;border:1px solid var(--line);color:var(--text);width:40px;height:40px;border-radius:var(--radius);}
+  @media(max-width:900px){
+    nav.links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--surface);flex-direction:column;padding:16px 24px;border-bottom:1px solid var(--line);gap:18px;}
+    nav.links.open{display:flex;}
+    .navtoggle{display:block;}
+  }
+
+  /* hero */
+  .hero{padding:88px 0 96px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
+  .hero-kicker{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:10px;margin-bottom:28px;}
+  .dotpair{display:inline-flex;gap:4px;}
+  .dot{width:6px;height:6px;border-radius:50%;}
+  .dot.eng{background:var(--eng);}
+  .dot.music{background:var(--music);}
+  .hero h1{font-size:clamp(48px,11vw,104px);font-weight:700;line-height:0.95;}
+  .hero .tagline{margin-top:22px;font-size:clamp(17px,2.6vw,22px);color:var(--muted);max-width:540px;font-family:'Space Grotesk',sans-serif;font-weight:400;}
+  .hero .sub{margin-top:14px;font-size:14px;color:var(--muted-2);}
+  .cta-row{display:flex;gap:14px;margin-top:44px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:var(--radius);
+    font-size:14px;font-weight:500;border:1px solid var(--line);transition:border-color .2s, background .2s;
+    cursor:pointer;background:none;color:inherit;font-family:inherit;
+  }
+  .btn.primary{background:var(--text);color:var(--bg);border-color:var(--text);}
+  .btn.primary:hover{opacity:.88;}
+  .btn.outline:hover{border-color:var(--muted);}
+  .btn.music-accent{border-color:var(--music-dim);color:var(--music);}
+  .btn.music-accent:hover{border-color:var(--music);}
+
+  /* section headers */
+  .sec-head{margin-bottom:48px;}
+  .sec-label{font-size:13px;color:var(--muted-2);margin-bottom:10px;}
+  .sec-head h2{font-size:clamp(28px,5vw,42px);font-weight:600;}
+  .sec-sub{margin-top:10px;color:var(--muted);font-size:15px;max-width:560px;}
+  .sec-foot-link{display:inline-block;margin-top:28px;font-size:13px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:2px;}
+  .sec-foot-link:hover{color:var(--text);border-color:var(--muted);}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;}
+  @media(max-width:800px){.about-grid{grid-template-columns:1fr;gap:36px;}}
+  .about-grid p{color:#cfcdc6;font-size:16px;max-width:60ch;}
+  .beyond-list{display:grid;gap:0;border-top:1px solid var(--line);}
+  .beyond-item{padding:18px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:140px 1fr;gap:16px;}
+  @media(max-width:640px){.beyond-item{grid-template-columns:1fr;gap:4px;}}
+  .beyond-item .k{font-size:13px;color:var(--muted-2);}
+  .beyond-item .v{color:var(--muted);font-size:14px;}
+
+  /* vision */
+  #vision{background:var(--surface);}
+  .vision-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  @media(max-width:800px){.vision-grid{grid-template-columns:1fr;gap:32px;}}
+  .vision-grid p{color:#cfcdc6;font-size:16px;max-width:58ch;}
+  .vision-themes{display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start;}
+  .theme-tag{font-size:13px;border:1px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:20px;}
+
+  /* interests */
+  .interests-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media(max-width:800px){.interests-grid{grid-template-columns:repeat(2,1fr);}}
+  .interest-card{background:var(--bg);padding:26px 22px;}
+  .interest-card h3{font-size:14px;color:var(--muted);font-weight:500;margin-bottom:16px;}
+  .interest-card ul{list-style:none;margin:0;padding:0;display:grid;gap:9px;}
+  .interest-card li{font-size:13.5px;color:#cfcdc6;padding-left:14px;position:relative;}
+  .interest-card li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:1px;background:var(--muted-2);}
+
+  /* engineering */
+  #engineering{background:var(--surface);}
+  .accent-eng{color:var(--eng);}
+  .accent-music{color:var(--music);}
+  .subgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px;margin-bottom:56px;}
+  @media(max-width:800px){.subgrid{grid-template-columns:1fr;}}
+  .field-box{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:var(--surface-2);}
+  .field-box h3{font-size:15px;font-weight:500;color:var(--muted);margin-bottom:16px;}
+  .field-line{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--line);font-size:14px;gap:12px;}
+  .field-line:last-child{border-bottom:none;}
+  .field-line .lbl{color:var(--muted-2);flex-shrink:0;}
+  .field-line .val{color:var(--muted);text-align:right;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .chip{border:1px solid var(--eng-dim);color:var(--eng);font-size:13px;padding:7px 14px;border-radius:20px;}
+  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media(max-width:900px){.proj-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:640px){.proj-grid{grid-template-columns:1fr;}}
+  .proj-card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:var(--surface-2);display:flex;flex-direction:column;min-height:210px;}
+  .proj-card .status{font-size:11px;color:var(--eng);border:1px solid var(--eng-dim);align-self:flex-start;padding:3px 9px;border-radius:12px;margin-bottom:16px;}
+  .proj-card .cat{font-size:11px;color:var(--muted-2);margin-bottom:8px;text-transform:none;}
+  .proj-card h4{font-family:'Space Grotesk',sans-serif;font-size:17px;margin-bottom:8px;}
+  .proj-card p{font-size:13px;color:var(--muted);flex:1;}
+  .proj-card .meta{font-size:12px;color:var(--muted-2);margin-top:14px;}
+  .proj-filters{display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap;}
+  .proj-filter{font-size:13px;padding:8px 16px;border-radius:20px;border:1px solid var(--line);color:var(--muted);background:none;cursor:pointer;font-family:inherit;}
+  .proj-filter.active{color:var(--text);border-color:var(--muted);}
+
+  /* music */
+  #music{background:var(--bg);}
+  .music-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;}
+  .music-head h2{color:var(--music);}
+  .artist-badge{font-size:12px;border:1px solid var(--music-dim);color:var(--music);padding:5px 12px;border-radius:20px;}
+  .disc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
+  @media(max-width:800px){.disc-grid{grid-template-columns:1fr;}}
+  .disc-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface-2);}
+  .disc-cover{aspect-ratio:1/1;background:linear-gradient(135deg,var(--surface) 0%,#1c1710 100%);display:flex;align-items:center;justify-content:center;color:var(--muted-2);font-size:12px;text-align:center;padding:12px;border-bottom:1px solid var(--line);}
+  .disc-info{padding:14px;}
+  .disc-info .t{font-size:14px;font-weight:500;}
+  .disc-info .tp{font-size:12px;color:var(--muted-2);margin-top:3px;}
+  .disc-empty{border:1px dashed var(--line);border-radius:var(--radius);padding:24px;color:var(--muted-2);font-size:13px;text-align:center;}
+
+  /* release feature */
+  .release{margin-top:40px;border:1px solid var(--music-dim);border-radius:var(--radius);overflow:hidden;background:linear-gradient(180deg,rgba(232,163,61,0.05),transparent 40%);}
+  .release-top{display:grid;grid-template-columns:220px 1fr;}
+  @media(max-width:760px){.release-top{grid-template-columns:1fr;}}
+  .release-cover{aspect-ratio:1/1;background:var(--surface-2);border-right:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted-2);font-size:12px;text-align:center;padding:20px;}
+  @media(max-width:760px){.release-cover{border-right:none;border-bottom:1px solid var(--line);}}
+  .release-body{padding:28px;}
+  .release-body .eyebrow{font-size:12px;color:var(--music);margin-bottom:8px;}
+  .release-body h3{font-size:26px;font-family:'Space Grotesk',sans-serif;}
+  .release-body .artist{color:var(--muted);font-size:14px;margin-top:6px;}
+  .release-body .story{margin-top:16px;color:#cfcdc6;font-size:14px;max-width:56ch;}
+  .platform-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+  .platform-pill{font-size:13px;border:1px solid var(--line);padding:9px 16px;border-radius:20px;color:var(--muted);display:inline-flex;align-items:center;gap:7px;}
+  .platform-pill.state-available{border-color:var(--ok-dim);color:var(--ok);}
+  .platform-pill.state-pending{border-style:dashed;color:var(--muted);}
+  .platform-pill.state-coming{border-style:dashed;color:var(--muted-2);}
+  .platform-pill.state-hidden{display:none;}
+  .platform-pill .pdot{width:5px;height:5px;border-radius:50%;background:currentColor;}
+  .release-meta{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);}
+  @media(max-width:600px){.release-meta{grid-template-columns:1fr;}}
+  .release-meta div{padding:16px 28px;border-right:1px solid var(--line);}
+  .release-meta div:last-child{border-right:none;}
+  .release-meta .k{font-size:11px;color:var(--muted-2);margin-bottom:4px;}
+  .release-meta .v{font-size:14px;color:var(--muted);}
+
+  /* short sally */
+  .sally-card{margin-top:40px;border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:var(--surface-2);display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:center;}
+  @media(max-width:600px){.sally-card{grid-template-columns:1fr;}}
+  .sally-cover{aspect-ratio:1/1;background:var(--surface);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted-2);font-size:11px;text-align:center;padding:10px;}
+  .sally-body h3{font-family:'Space Grotesk',sans-serif;font-size:20px;}
+  .sally-body .status-badge{display:inline-block;margin-top:8px;font-size:11px;color:#c77dd6;border:1px solid #4a2f52;padding:4px 10px;border-radius:12px;}
+  .sally-body p{margin-top:12px;font-size:14px;color:var(--muted);max-width:50ch;}
+  .sally-body .ig-link{margin-top:14px;display:inline-flex;gap:8px;align-items:center;font-size:13px;border:1px solid var(--line);padding:9px 16px;border-radius:20px;}
+
+  /* timeline */
+  #timeline{background:var(--surface);}
+  .tl{position:relative;padding-left:28px;margin-top:20px;}
+  .tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--line);}
+  .tl-item{position:relative;padding-bottom:40px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{content:"";position:absolute;left:-28px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--eng);}
+  .tl-item.music::before{border-color:var(--music);}
+  .tl-item.future::before{border-color:var(--muted-2);border-style:dashed;}
+  .tl-year{font-family:'Space Grotesk',sans-serif;font-size:14px;color:var(--muted-2);margin-bottom:6px;}
+  .tl-item h4{font-size:17px;font-weight:500;}
+  .tl-item p{font-size:14px;color:var(--muted);margin-top:4px;max-width:56ch;}
+  .tl-future{margin-top:40px;padding:20px;border:1px dashed var(--line);border-radius:var(--radius);color:var(--muted-2);font-size:13px;}
+
+  /* journal */
+  .journal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media(max-width:800px){.journal-grid{grid-template-columns:1fr;}}
+  .journal-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface-2);}
+  .journal-thumb{aspect-ratio:16/10;background:var(--surface);display:flex;align-items:center;justify-content:center;color:var(--muted-2);font-size:12px;border-bottom:1px solid var(--line);}
+  .journal-body{padding:18px;}
+  .journal-cat{font-size:11px;color:var(--eng);margin-bottom:8px;}
+  .journal-body h4{font-size:15px;font-weight:500;margin-bottom:6px;}
+  .journal-body .d{font-size:12px;color:var(--muted-2);}
+  .journal-body summary{cursor:pointer;font-size:12.5px;color:var(--muted);margin-top:10px;list-style:none;}
+  .journal-body summary::-webkit-details-marker{display:none;}
+  .journal-body summary::after{content:"Ler artigo →";}
+  .journal-body details[open] summary::after{content:"Fechar";}
+  .journal-body .content{margin-top:10px;font-size:13px;color:var(--muted);}
+
+  /* gallery */
+  #gallery{background:var(--bg);}
+  .gal-filters{display:flex;gap:10px;margin-bottom:28px;flex-wrap:wrap;}
+  .gal-filter{font-size:13px;padding:8px 16px;border-radius:20px;border:1px solid var(--line);color:var(--muted);}
+  .gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  @media(max-width:800px){.gal-grid{grid-template-columns:repeat(2,1fr);}}
+  .gal-item{aspect-ratio:1/1;background:var(--surface-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--muted-2);font-size:11px;text-align:center;padding:8px;}
+
+  /* social */
+  .social-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:32px;}
+  @media(max-width:700px){.social-grid{grid-template-columns:repeat(2,1fr);}}
+  .social-item{background:var(--bg);padding:20px;font-size:14px;}
+  .social-item .plat{font-weight:500;}
+  .social-item .ph{font-size:12px;color:var(--muted-2);margin-top:4px;display:block;}
+  .social-item a.dn{color:var(--muted);}
+  .social-item a.dn:hover{color:var(--text);}
+
+  /* contact */
+  #contact{background:var(--surface);}
+  .contact-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;}
+  @media(max-width:800px){.contact-grid{grid-template-columns:1fr;gap:40px;}}
+  .contact-info a, .contact-info .row{display:block;font-size:15px;color:var(--muted);padding:12px 0;border-bottom:1px solid var(--line);}
+  .contact-info a:hover{color:var(--text);}
+  .contact-info .row .k{font-size:11px;color:var(--muted-2);display:block;margin-bottom:3px;}
+  form.contact-form{display:grid;gap:14px;}
+  .contact-form input, .contact-form textarea{
+    background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius);
+    padding:14px;color:var(--text);font-family:inherit;font-size:14px;width:100%;
+  }
+  .contact-form textarea{min-height:120px;resize:vertical;}
+  .contact-form label{font-size:12px;color:var(--muted-2);margin-bottom:-8px;}
+  .contact-form button{
+    margin-top:6px;padding:14px 22px;background:var(--text);color:var(--bg);border:none;border-radius:var(--radius);
+    font-weight:500;font-size:14px;cursor:pointer;justify-self:start;
+  }
+
+  /* footer */
+  footer{padding:48px 0;}
+  .foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted-2);}
+  .foot-links{display:flex;gap:18px;}
+
+  .skip-link{position:absolute;left:-999px;top:0;background:var(--text);color:var(--bg);padding:10px 16px;z-index:100;}
+  .skip-link:focus{left:16px;top:16px;}
+  :focus-visible{outline:2px solid var(--eng);outline-offset:2px;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Saltar para o conteúdo</a>
+
+<header class="site">
+  <div class="navrow">
+    <a href="#top" class="brand">GILSON SALES <span>· JOE</span></a>
+    <nav class="links" id="navLinks">
+      <a href="#about">Sobre</a>
+      <a href="#vision">Visão</a>
+      <a href="#interests">Interesses</a>
+      <a href="#engineering">Engenharia</a>
+      <a href="#music">Música</a>
+      <a href="#projects">Projetos</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#journal">Journal</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+    <button class="navtoggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-kicker">
+        <span class="dotpair"><span class="dot eng"></span><span class="dot music"></span></span>
+        Estudante de engenharia · Artista musical independente · Angola
+      </div>
+      <h1>GILSON<br>SALES</h1>
+      <p class="tagline">Engenharia em construção. Música em movimento.</p>
+      <p class="sub">Gilson Sales — engenharia, física e tecnologia. Joe — o mesmo, em som.</p>
+      <div class="cta-row">
+        <a href="#about" class="btn primary">Conhecer o percurso</a>
+        <a href="#music" class="btn music-accent">Ouvir Joe</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-label">01 — Sobre</div>
+        <h2>Sobre Gilson Sales</h2>
+      </div>
+      <div class="about-grid">
+        <div id="about-bio"></div>
+        <div>
+          <h3 style="font-size:15px;color:var(--muted);margin-bottom:16px;font-weight:500;">Além dos títulos</h3>
+          <div class="beyond-list" id="about-beyond"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISÃO -->
+  <section id="vision">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-label">02 — Visão</div>
+        <h2>Visão</h2>
+      </div>
+      <div class="vision-grid">
+        <div id="vision-text"></div>
+        <div class="vision-themes" id="vision-themes"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERESSES -->
+  <section id="interests">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-label">03 — Interesses</div>
+        <h2>Interesses</h2>
+        <p class="sec-sub">As áreas que orientam o que Gilson estuda, constrói e escuta.</p>
+      </div>
+      <div class="interests-grid" id="interests-grid"></div>
+    </div>
+  </section>
+
+  <!-- ENGENHARIA -->
+  <section id="engineering">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-label accent-eng">04 — Engenharia</div>
+        <h2>ENGENHARIA</h2>
+        <p class="sec-sub">Construindo conhecimento antes de construir sistemas.</p>
+      </div>
+
+      <div class="subgrid">
+        <div class="field-box">
+          <h3>Formação</h3>
+          <div id="edu-fields"></div>
+        </div>
+        <div class="field-box">
+          <h3>Áreas de interesse</h3>
+          <div class="chip-row" id="eng-areas"></div>
+        </div>
+      </div>
+
+      <h3 style="font-size:15px;color:var(--muted);margin-bottom:20px;font-weight:500;">Projetos em engenharia</h3>
+      <div class="proj-grid" id="eng-projects"></div>
+    </div>
+  </section>
+
+  <!-- MÚSICA -->
+  <section id="music">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-label accent-music">05 — Música</div>
+        <div class="music-head"><h2>JOE</h2><span class="artist-badge" id="artist-type-badge"></span></div>
+        <p class="sec-sub">The artist behind the sound. Joe é o nome artístico de Gilson Sales.</p>
+      </div>
+
+      <h3 style="font-size:15px;color:var(--muted);font-weight:500;margin-bottom:6px;">Discografia</h3>
+      <p class="sec-sub" style="margin-top:0;margin-bottom:20px;">Singles, EPs, álbuns e colaborações — atualizado à medida que existem.</p>
+      <div class="disc-grid" id="disc-grid"></div>
+
+      <div id="releases-list"></div>
+
+      <h3 style="font-size:15px;color:var(--muted);font-weight:500;margin:48px 0 4px;">Short Sally</h3>
+      <p class="sec-sub" style="margin-top:0;">Outro lado do universo artístico de Joe.</p>
+      <div id="sally-container"></div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-label">06 — Projetos</div>
+        <h2>Projetos</h2>
+        <p class="sec-sub">Engenharia, música e trabalho criativo — reunidos num só lugar.</p>
+      </div>
+      <div class="proj-filters" id="proj-filters"></div>
+      <div class="proj-grid" id="all-projects"></div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-label">07 — Timeline</div>
+        <h2>THE JOURNEY</h2>
+      </div>
+      <div class="tl" id="tl-list"></div>
+      <div class="tl-future">
+        Espaço reservado para futuros marcos: universidade, bolsas, estágios, certificações, novos lançamentos, concertos e colaborações — adicionados aqui à medida que acontecem.
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNAL -->
+  <section id="journal">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-label">08 — Journal</div>
+        <h2>Journal</h2>
+        <p class="sec-sub">Notícias, lançamentos e marcos do percurso, à medida que acontecem.</p>
+      </div>
+      <div class="journal-grid" id="journal-grid"></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-label">09 — Galeria</div>
+        <h2>Galeria</h2>
+      </div>
+      <div class="gal-filters">
+        <span class="gal-filter">Engineering</span>
+        <span class="gal-filter">Music</span>
+        <span class="gal-filter">Life</span>
+        <span class="gal-filter">Projects</span>
+      </div>
+      <div class="gal-grid">
+        <div class="gal-item">Foto em atualização</div>
+        <div class="gal-item">Foto em atualização</div>
+        <div class="gal-item">Foto em atualização</div>
+        <div class="gal-item">Foto em atualização</div>
+        <div class="gal-item">Foto em atualização</div>
+        <div class="gal-item">Foto em atualização</div>
+        <div class="gal-item">Foto em atualização</div>
+        <div class="gal-item">Foto em atualização</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <section id="social">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-label">10 — Redes</div>
+        <h2>Find me online</h2>
+      </div>
+      <div class="social-grid" id="social-grid"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-label">11 — Contacto</div>
+        <h2>Let's build something.</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info" id="contact-info"></div>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Formulário de demonstração — ligar a um serviço de envio de email antes de publicar.');">
+          <label for="name">Nome</label>
+          <input id="name" type="text" placeholder="O teu nome" required>
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="O teu email" required>
+          <label for="msg">Mensagem</label>
+          <textarea id="msg" placeholder="Escreve a tua mensagem" required></textarea>
+          <button type="submit">Enviar mensagem</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>Gilson Sales · Angola</div>
+    <div class="foot-links" id="foot-links"></div>
+    <div>© 2026 Gilson Sales. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================================
+   SITE DATA — ÚNICA FONTE DE VERDADE
+   Todo o conteúdo do site vive aqui. Os componentes abaixo apenas leem
+   estes dados — não há texto repetido dentro do HTML/CSS.
+   Para atualizar o site, edite apenas este objeto.
+   Secções marcadas "// EDITAR AQUI" são as que mudam com mais frequência.
+   ========================================================================= */
+const siteData = {
+
+  // EDITAR AQUI — perfil e biografia
+  profile: {
+    civilName: "Gilson Sales",
+    artisticName: "Joe",
+    tagline: "Engenharia em construção. Música em movimento.",
+    subtitle: "Estudante de engenharia · Artista musical independente · Angola",
+    bio: [
+      "Gilson Sales é um jovem angolano interessado em engenharia, física, tecnologia e sistemas. O seu percurso académico está orientado para as áreas exatas, com particular interesse em engenharia eletrotécnica e sistemas de controlo.",
+      "Em paralelo, Gilson desenvolve uma identidade artística sob o nome Joe — um projeto de música independente, construído fora do circuito de grandes editoras, com lançamentos publicados diretamente ao público.",
+      "As duas direções não competem entre si: o raciocínio técnico da engenharia e a expressão criativa da música alimentam-se mutuamente. O objetivo é construir uma carreira que combine conhecimento técnico e criatividade, com desenvolvimento contínuo nas duas frentes."
+    ],
+    beyond: {
+      "Interesses": "Em atualização",
+      "Filosofia pessoal": "Em atualização",
+      "Objetivos": "Em atualização",
+      "Aprendizagem": "Em atualização",
+      "Projetos": "Em atualização",
+      "Visão de futuro": "Em atualização"
+    }
+  },
+
+  // EDITAR AQUI — visão pessoal
+  vision: {
+    text: [
+      "A visão de Gilson é simples de descrever e exigente de cumprir: continuar a aprender, em engenharia e em ciência, e continuar a criar, em música e em projetos próprios — sem escolher entre as duas coisas.",
+      "Isto significa investir tempo real em conhecimento técnico — eletricidade, automação, sistemas de controlo — enquanto a carreira artística de Joe amadurece em paralelo, lançamento a lançamento.",
+      "A longo prazo, o objetivo é que este trabalho técnico possa também contribuir para Angola, através de projetos concretos. Isto é uma direção, não uma conquista já alcançada."
+    ],
+    themes: ["Aprendizagem contínua","Engenharia","Ciência","Tecnologia","Criatividade","Música","Desenvolvimento pessoal","Construção de projetos","Crescimento profissional","Contribuir para Angola"]
+  },
+
+  // EDITAR AQUI — categorias de interesses (dados dinâmicos, sem texto fixo nos componentes)
+  interests: [
+    { category: "Ciência", items: ["Física","Matemática","Ciência aplicada"] },
+    { category: "Engenharia", items: ["Engenharia Eletrotécnica","Sistemas de Controlo","Automação","Eletricidade","Sistemas","Tecnologia"] },
+    { category: "Música", items: ["Trap","Rap","Composição","Produção musical","Performance","Desenvolvimento artístico"] },
+    { category: "Desenvolvimento", items: ["Aprendizagem","Comunicação","Criatividade","Desenvolvimento de competências"] }
+  ],
+
+  // EDITAR AQUI — formação académica
+  education: {
+    institution: "Em atualização",
+    course: "Em atualização",
+    period: "Em atualização",
+    certificates: "Em atualização",
+    achievements: "Em atualização"
+  },
+
+  engineeringAreas: ["Engenharia Eletrotécnica","Sistemas de Controlo","Física","Eletricidade","Automação","Tecnologia","Sistemas"],
+
+  // EDITAR AQUI — projetos (Engineering / Music / Creative)
+  projects: [
+    { title: "Projeto de engenharia 01", description: "Descrição em atualização.", category: "Engineering", date: "Em atualização", status: "Em desenvolvimento", technologies: "Em atualização" },
+    { title: "Projeto de engenharia 02", description: "Descrição em atualização.", category: "Engineering", date: "Em atualização", status: "Em desenvolvimento", technologies: "Em atualização" },
+    { title: "Projeto musical", description: "Descrição em atualização.", category: "Music", date: "Em atualização", status: "Em desenvolvimento", technologies: "Em atualização" },
+    { title: "Projeto criativo", description: "Descrição em atualização.", category: "Creative", date: "Em atualização", status: "Em desenvolvimento", technologies: "Em atualização" }
+  ],
+
+  // EDITAR AQUI — música. Cada plataforma tem: url, status ('available' | 'pending_link' | 'coming_soon' | 'hidden')
+  // 'available'     -> tem url real, mostra botão clicável
+  // 'pending_link'  -> já existe/está disponível mas o link ainda não foi fornecido aqui
+  // 'coming_soon'   -> ainda não existe nesta plataforma
+  // 'hidden'        -> não mostrar esta plataforma
+  music: {
+    artistName: "Joe",
+    artistType: "Independent Artist",
+    releases: [
+      {
+        title: "Três da Manhã",
+        type: "Single",
+        description: "História da música — em atualização.",
+        cover: null,
+        releaseDate: "Em atualização",
+        credits: "Em atualização",
+        platforms: {
+          youtube:     { url: null, status: "pending_link" },
+          soundcloud:  { url: null, status: "pending_link" },
+          spotify:     { url: null, status: "coming_soon" },
+          appleMusic:  { url: null, status: "coming_soon" }
+        }
+      },
+      {
+        title: "Regular Show",
+        type: "Single",
+        description: "História da música — em atualização.",
+        cover: null,
+        releaseDate: "Em atualização",
+        credits: "Em atualização",
+        platforms: {
+          youtube:     { url: null, status: "pending_link" },
+          soundcloud:  { url: null, status: "pending_link" },
+          spotify:     { url: null, status: "coming_soon" },
+          appleMusic:  { url: null, status: "coming_soon" }
+        }
+      }
+    ],
+    albums: [],
+    eps: []
+  },
+
+  // EDITAR AQUI — Short Sally (atualmente exclusivo do Instagram)
+  shortSally: {
+    title: "Short Sally",
+    description: "Em atualização.",
+    image: null,
+    status: "instagram_exclusive",
+    instagramUrl: null // EDITAR AQUI — inserir link do Instagram quando disponível
+  },
+
+  // EDITAR AQUI — timeline (não inventar datas específicas)
+  timeline: [
+    { year: "2026", title: "Desenvolvimento do projeto artístico Joe", type: "music" },
+    { year: "2026", title: "Lançamento de \"Três da Manhã\"", type: "music" },
+    { year: "2026", title: "Lançamento de \"Regular Show\"", type: "music" },
+    { year: "2026", title: "Short Sally disponibilizado no Instagram", type: "music" },
+    { year: "2026", title: "Conclusão do ensino médio e preparação para a próxima etapa académica", type: "academic" }
+  ],
+
+  // EDITAR AQUI — journal. Cada artigo: title, date, category, image, content, slug
+  journal: [
+    { title: "Título em atualização", date: "Em atualização", category: "Música", slug: "em-atualizacao-1", content: "Conteúdo do artigo em atualização." },
+    { title: "Título em atualização", date: "Em atualização", category: "Engenharia", slug: "em-atualizacao-2", content: "Conteúdo do artigo em atualização." },
+    { title: "Título em atualização", date: "Em atualização", category: "Percurso", slug: "em-atualizacao-3", content: "Conteúdo do artigo em atualização." }
+  ],
+
+  // EDITAR AQUI — redes sociais (um único local para todos os links)
+  social: {
+    instagram: { displayName: "Gilson 3X", username: "@Gilson3X", url: "https://instagram.com/Gilson3X" },
+    facebook:  { displayName: "Gilson Salles", note: "mesmo perfil de Gilson Sales", url: null }, // EDITAR AQUI — inserir URL
+    tiktok:    { displayName: "Joe Salles / Gilson Salles", url: null }, // EDITAR AQUI — inserir URL quando disponível
+    youtube:   { displayName: null, url: null },
+    linkedin:  { displayName: null, url: null },
+    spotify:   { displayName: null, url: null },
+    soundcloud:{ displayName: null, url: null }
+  },
+
+  // EDITAR AQUI — contacto (fonte única — nunca repetir estes valores noutro sítio do código)
+  contact: {
+    phone: "+244 939 807 626",
+    email: null // EDITAR AQUI — inserir email profissional
+  }
+};
+
+/* =========================================================================
+   RENDER ENGINE — não é necessário editar a partir daqui.
+   Estas funções apenas leem siteData e constroem o HTML.
+   ========================================================================= */
+
+const platformLabels = {
+  youtube: "YouTube", soundcloud: "SoundCloud", spotify: "Spotify",
+  appleMusic: "Apple Music", deezer: "Deezer", youtubeMusic: "YouTube Music"
+};
+
+function platformPill(key, p){
+  if(!p || p.status === "hidden") return "";
+  const label = platformLabels[key] || key;
+  if(p.status === "available" && p.url){
+    return `<a class="platform-pill state-available" href="${p.url}" target="_blank" rel="noopener"><span class="pdot"></span>Ouvir no ${label}</a>`;
+  }
+  if(p.status === "pending_link"){
+    return `<span class="platform-pill state-pending"><span class="pdot"></span>${label} — disponível (link a adicionar)</span>`;
+  }
+  return `<span class="platform-pill state-coming"><span class="pdot"></span>${label} — Em breve</span>`;
+}
+
+function renderAbout(){
+  document.getElementById('about-bio').innerHTML = siteData.profile.bio.map(p => `<p>${p}</p>`).join('');
+  document.getElementById('about-beyond').innerHTML = Object.entries(siteData.profile.beyond)
+    .map(([k,v]) => `<div class="beyond-item"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('');
+}
+
+function renderVision(){
+  document.getElementById('vision-text').innerHTML = siteData.vision.text.map(p => `<p>${p}</p>`).join('');
+  document.getElementById('vision-themes').innerHTML = siteData.vision.themes.map(t => `<span class="theme-tag">${t}</span>`).join('');
+}
+
+function renderInterests(){
+  document.getElementById('interests-grid').innerHTML = siteData.interests.map(c => `
+    <div class="interest-card">
+      <h3>${c.category}</h3>
+      <ul>${c.items.map(i => `<li>${i}</li>`).join('')}</ul>
+    </div>`).join('');
+}
+
+function renderEngineering(){
+  const e = siteData.education;
+  document.getElementById('edu-fields').innerHTML = `
+    <div class="field-line"><span class="lbl">Instituição</span><span class="val">${e.institution}</span></div>
+    <div class="field-line"><span class="lbl">Curso</span><span class="val">${e.course}</span></div>
+    <div class="field-line"><span class="lbl">Período</span><span class="val">${e.period}</span></div>
+    <div class="field-line"><span class="lbl">Certificados</span><span class="val">${e.certificates}</span></div>
+    <div class="field-line"><span class="lbl">Conquistas académicas</span><span class="val">${e.achievements}</span></div>`;
+  document.getElementById('eng-areas').innerHTML = siteData.engineeringAreas.map(a => `<span class="chip">${a}</span>`).join('');
+  document.getElementById('eng-projects').innerHTML = siteData.projects.filter(p => p.category === "Engineering").map(projCard).join('');
+}
+
+function projCard(p){
+  return `<div class="proj-card">
+    <span class="status">${p.status}</span>
+    <div class="cat">${p.category}</div>
+    <h4>${p.title}</h4>
+    <p>${p.description}</p>
+    <div class="meta">Tecnologias: ${p.technologies} · Data: ${p.date}</div>
+  </div>`;
+}
+
+function renderMusic(){
+  document.getElementById('artist-type-badge').textContent = siteData.music.artistType;
+
+  const discCounts = [
+    { label: "Singles", n: siteData.music.releases.length },
+    { label: "EPs", n: siteData.music.eps.length },
+    { label: "Álbuns", n: siteData.music.albums.length }
+  ];
+  document.getElementById('disc-grid').innerHTML = discCounts.map(d => `
+    <div class="disc-card"><div class="disc-cover">${d.n} publicado(s)</div>
+    <div class="disc-info"><div class="t">${d.label}</div><div class="tp">${d.n > 0 ? d.n + ' título(s)' : 'Em atualização'}</div></div></div>`).join('')
+    + (siteData.music.eps.length === 0 && siteData.music.albums.length === 0
+        ? `<div class="disc-empty">EPs e álbuns: estrutura pronta, sem lançamentos ainda. Adicionar em <code>siteData.music.eps</code> / <code>.albums</code>.</div>` : '');
+
+  document.getElementById('releases-list').innerHTML = siteData.music.releases.map(r => `
+    <div class="release" id="release-${slugify(r.title)}">
+      <div class="release-top">
+        <div class="release-cover">${r.cover ? `<img src="${r.cover}" alt="Capa de ${r.title}">` : '[ Capa a adicionar ]'}</div>
+        <div class="release-body">
+          <div class="eyebrow">${r.type}</div>
+          <h3>${r.title}</h3>
+          <p class="artist">${siteData.music.artistName} · ${siteData.music.artistType}</p>
+          <p class="story">${r.description}</p>
+          <div class="platform-row">${Object.entries(r.platforms).map(([k,p]) => platformPill(k,p)).join('')}</div>
+        </div>
+      </div>
+      <div class="release-meta">
+        <div><div class="k">Data de lançamento</div><div class="v">${r.releaseDate}</div></div>
+        <div><div class="k">Créditos</div><div class="v">${r.credits}</div></div>
+      </div>
+    </div>`).join('');
+
+  const s = siteData.shortSally;
+  document.getElementById('sally-container').innerHTML = `
+    <div class="sally-card">
+      <div class="sally-cover">${s.image ? `<img src="${s.image}" alt="${s.title}">` : '[ Imagem a adicionar ]'}</div>
+      <div class="sally-body">
+        <h3>${s.title}</h3>
+        <span class="status-badge">Instagram Exclusive</span>
+        <p>${s.description}</p>
+        ${s.instagramUrl
+          ? `<a class="ig-link" href="${s.instagramUrl}" target="_blank" rel="noopener">Ver no Instagram</a>`
+          : `<span class="ig-link" style="color:var(--muted-2);border-style:dashed;">Link do Instagram a adicionar</span>`}
+      </div>
+    </div>`;
+}
+
+function renderProjects(){
+  const cats = ["Todos", ...new Set(siteData.projects.map(p => p.category))];
+  document.getElementById('proj-filters').innerHTML = cats.map((c,i) => `<button class="proj-filter${i===0?' active':''}" data-cat="${c}">${c}</button>`).join('');
+  const grid = document.getElementById('all-projects');
+  grid.innerHTML = siteData.projects.map(projCard).join('');
+  document.getElementById('proj-filters').addEventListener('click', e => {
+    const btn = e.target.closest('.proj-filter');
+    if(!btn) return;
+    document.querySelectorAll('.proj-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    grid.innerHTML = (cat === "Todos" ? siteData.projects : siteData.projects.filter(p => p.category === cat)).map(projCard).join('');
+  });
+}
+
+function renderTimeline(){
+  document.getElementById('tl-list').innerHTML = siteData.timeline.map(t => `
+    <div class="tl-item ${t.type === 'music' ? 'music' : ''}">
+      <div class="tl-year">${t.year}</div>
+      <h4>${t.title}</h4>
+    </div>`).join('');
+}
+
+function renderJournal(){
+  document.getElementById('journal-grid').innerHTML = siteData.journal.map(a => `
+    <div class="journal-card" id="journal-${a.slug}">
+      <div class="journal-thumb">${a.image ? `<img src="${a.image}" alt="${a.title}">` : 'Imagem em atualização'}</div>
+      <div class="journal-body">
+        <div class="journal-cat">${a.category}</div>
+        <h4>${a.title}</h4>
+        <div class="d">${a.date}</div>
+        <details><summary></summary><div class="content">${a.content}</div></details>
+      </div>
+    </div>`).join('');
+}
+
+function renderSocial(){
+  const s = siteData.social;
+  const rows = [
+    ["Instagram", s.instagram.displayName, s.instagram.username, s.instagram.url],
+    ["Facebook", s.facebook.displayName, s.facebook.note || "", s.facebook.url],
+    ["TikTok", s.tiktok.displayName, "", s.tiktok.url],
+    ["YouTube", s.youtube.displayName, "", s.youtube.url],
+    ["LinkedIn", s.linkedin.displayName, "", s.linkedin.url],
+    ["Spotify", s.spotify.displayName, "", s.spotify.url],
+    ["SoundCloud", s.soundcloud.displayName, "", s.soundcloud.url]
+  ];
+  document.getElementById('social-grid').innerHTML = rows.map(([plat, name, sub, url]) => `
+    <div class="social-item">
+      <div class="plat">${plat}</div>
+      ${url ? `<a class="dn" href="${url}" target="_blank" rel="noopener">${name || 'Abrir'}</a>` : `<span>${name || 'Em atualização'}</span>`}
+      ${sub ? `<span class="ph">${sub}</span>` : (!url ? `<span class="ph">Link a adicionar</span>` : '')}
+    </div>`).join('');
+
+  document.getElementById('foot-links').innerHTML = [
+    s.instagram.url ? `<a href="${s.instagram.url}" target="_blank" rel="noopener">Instagram</a>` : '',
+    s.spotify.url ? `<a href="${s.spotify.url}" target="_blank" rel="noopener">Spotify</a>` : '',
+    s.linkedin.url ? `<a href="${s.linkedin.url}" target="_blank" rel="noopener">LinkedIn</a>` : ''
+  ].filter(Boolean).join('') || `<a href="#social">Redes sociais</a>`;
+}
+
+function renderContact(){
+  const c = siteData.contact;
+  document.getElementById('contact-info').innerHTML = `
+    <div class="row"><span class="k">Telefone</span>${c.phone || 'Em atualização'}</div>
+    ${c.email
+      ? `<a href="mailto:${c.email}">${c.email}</a>`
+      : `<div class="row"><span class="k">Email</span>Em atualização — inserir em siteData.contact.email</div>`}
+    <a href="#social">Instagram e outras redes</a>
+  `;
+}
+
+function slugify(s){ return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
+
+function renderAll(){
+  renderAbout();
+  renderVision();
+  renderInterests();
+  renderEngineering();
+  renderMusic();
+  renderProjects();
+  renderTimeline();
+  renderJournal();
+  renderSocial();
+  renderContact();
+}
+renderAll();
+
+const toggle = document.getElementById('navToggle');
+const links = document.getElementById('navLinks');
+toggle.addEventListener('click', () => {
+  const isOpen = links.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', isOpen);
+});
+links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  links.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+}));
+</script>
+</body>
+</html>
